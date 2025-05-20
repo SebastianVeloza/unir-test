@@ -12,8 +12,8 @@ Este proyecto es una calculadora web desarrollada en Python utilizando Flask. Ex
 
 - Suma: `/calc/add/<a>/<b>`
 - Resta: `/calc/substract/<a>/<b>`
-- Multiplicación: `/calc/multiply/<a>/<b>` _(requiere permiso válido)_
-- División: `/calc/divide/<a>/<b>` _(valida división por cero)_
+- Multiplicación: `/calc/multiply/<a>/<b>`
+- División: `/calc/divide/<a>/<b>`
 - Potenciación: `/calc/power/<a>/<b>`
 - Raíz cuadrada: `/calc/sqrt/<a>`
 - Logaritmo base 10: `/calc/log10/<a>`
