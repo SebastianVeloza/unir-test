@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+<testsuite name="pytest" errors="0" failures="0" skipped="0" tests="14" time="0.125" timestamp="2025-05-20T13:37:10.200540-05:00" hostname="DESKTOP-U5M7NVT">
+<testcase classname="test.unit.calc_test.TestCalculate" name="test_add_method_fails_with_nan_parameter" time="0.003" />
+<testcase classname="test.unit.calc_test.TestCalculate" name="test_add_method_returns_correct_result" time="0.001" />
+<testcase classname="test.unit.calc_test.TestCalculate" name="test_divide_method_fails_with_division_by_zero" time="0.000" />
+<testcase classname="test.unit.calc_test.TestCalculate" name="test_divide_method_fails_with_nan_parameter" time="0.000" />
+<testcase classname="test.unit.calc_test.TestCalculate" name="test_divide_method_returns_correct_result" time="0.000" />
+<testcase classname="test.unit.calc_test.TestCalculate" name="test_log10_method_fails_with_invalid_number" time="0.001" />
+<testcase classname="test.unit.calc_test.TestCalculate" name="test_log10_method_returns_correct_result" time="0.001" />
+<testcase classname="test.unit.calc_test.TestCalculate" name="test_multiply_method_returns_correct_result" time="0.001" />
+<testcase classname="test.unit.calc_test.TestCalculate" name="test_power_method_fails_with_invalid_type" time="0.001" />
+<testcase classname="test.unit.calc_test.TestCalculate" name="test_power_method_returns_correct_result" time="0.001" />
+<testcase classname="test.unit.calc_test.TestCalculate" name="test_sqrt_method_fails_with_negative_number" time="0.001" />
+<testcase classname="test.unit.calc_test.TestCalculate" name="test_sqrt_method_returns_correct_result" time="0.001" />
+<testcase classname="test.unit.util_test.TestUtil" name="test_convert_to_number_correct_param" time="0.001" />
+<testcase classname="test.unit.util_test.TestUtil" name="test_convert_to_number_invalid_type" time="0.001" />
+</testsuite>
+</testsuites>

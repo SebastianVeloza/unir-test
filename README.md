@@ -61,3 +61,15 @@ pytest test/rest
 set BASE_URL=http://127.0.0.1:5000
 pytest test/rest
 ```
+
+### pruebas con reporte XML
+
+```
+# Para pruebas unitarias
+pytest test/unit --junitxml=report_unit.xml
+
+# Para pruebas REST
+$env:BASE_URL="http://127.0.0.1:5000"
+pytest test/rest --junitxml=report_api.xml
+
+```
