@@ -1,6 +1,7 @@
 import unittest
 from unittest.mock import patch
 import pytest
+import math
 
 from app.calc import Calculator
 
@@ -50,6 +51,29 @@ class TestCalculate(unittest.TestCase):
         self.assertEqual(0, self.calc.multiply(1, 0))
         self.assertEqual(0, self.calc.multiply(-1, 0))
         self.assertEqual(-2, self.calc.multiply(-1, 2))
+        
+    def test_power_method_returns_correct_result(self):
+        self.assertEqual(self.calc.power(2, 3), 8)
+        self.assertEqual(self.calc.power(5, 0), 1)
+        self.assertEqual(self.calc.power(4, 0.5), 2)
+
+    def test_power_method_fails_with_invalid_type(self):
+        self.assertRaises(TypeError, self.calc.power, "2", 3)
+
+    def test_sqrt_method_returns_correct_result(self):
+        self.assertEqual(self.calc.sqrt(4), 2)
+        self.assertAlmostEqual(self.calc.sqrt(2), math.sqrt(2), places=6)
+
+    def test_sqrt_method_fails_with_negative_number(self):
+        self.assertRaises(TypeError, self.calc.sqrt, -1)
+
+    def test_log10_method_returns_correct_result(self):
+        self.assertEqual(self.calc.log10(100), 2)
+        self.assertAlmostEqual(self.calc.log10(10), 1)
+
+    def test_log10_method_fails_with_invalid_number(self):
+        self.assertRaises(TypeError, self.calc.log10, 0)
+        self.assertRaises(TypeError, self.calc.log10, -10)
 
 
 if __name__ == "__main__":  # pragma: no cover
