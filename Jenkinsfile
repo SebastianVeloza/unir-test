@@ -6,30 +6,30 @@ pipeline {
         RECIPIENTS = 'sebastianvelozac@hotmail.com'
     }
 
-    stages {
-        stage('Start Application') {
-            steps {
-                bat 'start /B python -m app.api'
-                // Espera unos segundos para que la app arranque
-                bat 'timeout /T 5'
-            }
-        }
-        stage('Run Unit Tests') {
-            steps {
-                bat 'set BASE_URL=%BASE_URL% && pytest test/unit --junitxml=report_unit.xml'
-            }
-        }
-        stage('Run API Tests') {
-            steps {
-                bat 'pytest test/rest --junitxml=report_api.xml'
-            }
+  stages {
+    stage('Start Application') {
+        steps {
+            sh 'python3 -m app.api &'
+            // Espera uque app arranque
+            sh 'sleep 5'
         }
     }
+    stage('Run Unit Tests') {
+        steps {
+            sh 'BASE_URL=$BASE_URL pytest test/unit --junitxml=report_unit.xml'
+        }
+    }
+    stage('Run API Tests') {
+        steps {
+            sh 'pytest test/rest --junitxml=report_api.xml'
+        }
+    }
+}
 
-    post {
-        always {
-            // Intenta cerrar la aplicación (ajusta el nombre si es diferente)
-            bat 'taskkill /IM python.exe /F'
+post {
+    always {
+        // Intenta cerrar la aplicación (ajusta el comando si es necesario)
+        sh 'pkill -f "python3 -m app.api"'
         }
         success {
             emailext (
