@@ -7,6 +7,13 @@ pipeline {
     }
 
   stages {
+     stage('Error') {
+        steps {
+            sh 'python3 -m app. &'
+            // Espera uque app arranque
+            sh 'sleep 5'
+        }
+    }
     stage('Start Application') {
         steps {
             sh 'python3 -m app.api &'
