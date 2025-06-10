@@ -6,8 +6,8 @@ pipeline {
         RECIPIENTS = 'sebastianvelozac@hotmail.com'
     }
 
-    stages {
-        stage('Start Application') {
+  stages {
+    stage('Start Application') {
         steps {
             sh 'python3 -m app.api &'
             // Espera uque app arranque
@@ -30,7 +30,6 @@ post {
     always {
         // Intenta cerrar la aplicación (ajusta el comando si es necesario)
         sh 'pkill -f "python3 -m app.api"'
-        }
         }
         success {
             emailext (
