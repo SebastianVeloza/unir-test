@@ -12,7 +12,7 @@ pipeline {
             sh 'python3 -m app. &'
             // Espera uque app arranque
             sh 'sleep 5'
-        }
+        
     }
     stage('Start Application') {
         steps {
